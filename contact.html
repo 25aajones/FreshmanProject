@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Form to allow a user to contact the author for help">
+    <meta name="keywords" content="Contact, Email">
+    <meta name="author" content="Avery Jones">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link  href="CSS/style.css" rel="stylesheet">
+    <title>Contact Page</title>
+</head>
+<body>
+    <header> 
+		<nav class="top-nav"> <!-- Navigation Bar -->
+			<a href="index.html"><img src="images/logo.png" alt="logo"></a>
+            <div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="notes.html">NOTES</a></li>
+                    <li><a href="tracker.html">GOALS</a></li>
+                    <li><a href="calendar.html">CALENDAR</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				</ul>
+			</div>
+            <div class="nav-member">
+                <ul>
+                    <li><a href="login.html">LOGIN</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+	</header>
+
+    <!-- Contact Us Form -->
+	<div class="contact-col">
+	    <form action="form-handler.php" method="post"> <!--From REQUIRED 5/4/2023 -->
+            <fieldset> <!--From fieldset REQUIRED 5/4/2023 -->
+                <legend>Email Us Here</legend> <!--From legend REQUIRED 5/4/2023 -->
+                <label for="name">NAME</label> <!--From labels REQUIRED 5/4/2023 -->
+			   	<input type="text" name="name" id="name" placeholder="Enter your name" required> <!--From 3 input boxes REQUIRED 5/4/2023 -->
+                <label for="email">EMAIL</label>
+			   	<input type="email" name="email" id="email" placeholder="Enter your email address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <!--From Pattern REQUIRED 5/4/2023 -->
+                <label for="subject">SUBJECT</label> <!--From 2 datatypes text and email REQUIRED 5/4/2023 -->
+			   	<input type="text" name="subject" id="subject" placeholder="Enter your subject" required> <!--From placeholder and required REQUIRED 5/4/2023 -->
+		       	<label for="message">MESSAGE</label>
+                <textarea rows="8" name="message" id="message" placeholder="Message" maxlength="500" required></textarea> <!--From Maxlength REQUIRED 5/4/2023 -->
+                <div class="center-btn">
+	        	    <button type="submit" class="btn">Send Message</button> <!--From submit REQUIRED 5/4/2023 -->
+                    <button type="reset" class="btn">Reset</button> <!--From reset REQUIRED 5/4/2023 -->
+                </div>
+            </fieldset>
+        </form>
+	</div>
+
+    <address class="address"> <!-- Address REQURIED 5/8/2023 -->
+        Visit us at:<br>
+        Mesa, AZ<br>
+        USA
+    </address>
+
+    <footer>
+        <nav class="vertical">
+            <p>Resources</p>
+           <ul>
+            <li><a href="about.html">About Us</a></li>         
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="help.html">Help</a></li>            
+           </ul>         
+        </nav>
+        <nav class="vertical">
+            <p>Pages</p>
+            <ul>
+               <li><a href="collections.html">Collections</a></li>
+               <li><a href="calendar.html">Calendar</a></li>
+               <li><a href="notes.html">Notes</a></li>         
+               <li><a href="tracker.html">Goals</a></li>                        
+            </ul>         
+         </nav>
+         <nav class="vertical">
+            <p>Login</p>
+            <ul>
+               <li><a href="login.html">Login</a></li>  
+               <li><a href="register.html">Sign Up</a></li>                
+            </ul>         
+         </nav>
+     </footer>
+
+     <script src="JS/sheet.js"></script>
+</body>
+</html>

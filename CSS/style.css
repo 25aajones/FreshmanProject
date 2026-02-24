@@ -1,0 +1,808 @@
+/* Import Google Font -Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+}
+
+/* Navigation Bar */
+.top-nav {
+	display: flex;
+	padding: .5% 3%;
+	justify-content: space-between;
+	align-items: center;
+	background: linear-gradient(345deg, rgb(147, 204, 250),
+										rgb(97, 99, 199) 30%);
+	height: auto;
+}
+.nav-links{
+	flex: 1;
+	text-align: left;
+}
+.nav-links ul li{
+	list-style: none;
+	display: inline-block;
+	padding: 8px 10px;
+	position: relative;
+}
+.nav-member ul li{
+	flex: 1;
+	text-align: right;
+	list-style: none;
+	display: inline-block;
+	padding: 8px 12px;
+	position: relative;
+}
+.nav-links ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 15px;
+}
+.nav-member ul li a{
+	color: black;
+	text-decoration: none;
+	font-size: 15px;
+}
+/* Dynamic Styling of Navigation REQUIRED 4/25/2023 */
+.nav-links ul li::after {
+	content: '';
+	width: 0%;
+	height: 2px;
+	background: rgb(199, 131, 97); 
+	display: block;
+	margin: auto;
+	transition: .2s;
+}
+.nav-member ul li::after{
+	content: '';
+	width: 0%;
+	height: 2px;
+	background: rgb(250, 229, 210);
+	display: block;
+	margin: auto;
+	transition: .2s;
+}
+.nav-links ul li:hover::after, .nav-member ul li:hover::after{
+	width: 100%;
+}
+nav img {
+	width: 40px;
+	height: auto;
+	border-radius: 50%;
+}
+nav .fa {
+	display: none;
+}
+
+/* Smaller Devices <= 800px */
+@media(max-width: 800px){
+	.nav-links ul li, .nav-member ul li{
+		display: block;
+	}
+	nav {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.nav-links, .nav-member{
+		position: fixed;
+		display: inline-block;
+		background: linear-gradient(325deg, rgb(97, 99, 199),
+											rgb(147, 204, 250) 95%);
+		height: 100vh;
+		width: 200px;
+		top: 0;
+		right: -200px;
+		text-align: left;
+		z-index: 2;
+		transition: 1s;
+	}
+	nav .fa{
+		display: block;
+		color: black;
+		margin: 10px;
+		font-size: 22px;
+		cursor: pointer;
+		float: right;
+	}
+	.nav-links ul, .nav-member ul {
+		padding: 30px;
+	}
+	.nav-links ul li:hover::after, .nav-member ul li:hover::after{
+		width: 0%;
+	}
+	.notes-img img, .calendar-img img {
+		padding: 5%;
+	}
+}
+
+/* Button Styles */
+.btn {
+	display: inline-block;
+	padding: 8px 15px;
+	color: black;
+	background-color: transparent;
+	border: 1px solid rgb(97, 99, 199);
+	border-radius: 0.5rem;
+	text-decoration: none;
+}
+.btn:hover {
+	transition: .2s;
+	background: rgb(97, 99, 199);
+	color: white;
+}
+
+/* Body Styles */
+
+.welcome{
+	text-align: center;
+	background-position: center;
+	position: relative;
+	margin: 100px auto;
+	padding: 0 15px;
+}
+.welcome h1 {
+	font-size: 40px;
+}
+.welcome p {
+	font-size: 20px;
+}
+.notes, .goals, .cal {
+	display: grid;
+	grid-template-columns: repeat(2, 2fr);
+	grid-gap: 1.5em;
+	align-items: center;
+	padding: 5% 15% 5% 5%;
+}
+.goals {
+	padding: 5% 5% 5% 15%;
+}
+/* Background within the site REQUIRED 4/29/2023 */
+.cal, .notes {
+	background: rgb(250, 229, 210, 0.3); 
+}
+.notes-img img, .goals-img img, .calendar-img img  {
+	max-width: 100%;
+	width: 250px;
+	height: auto;
+}
+.notes-text, .goals-text, .calendar-text {
+	padding: 5%;
+	text-align: left;
+}
+.notes-text p, .goals-text p, .calendar-text p {
+	margin: 0.8rem 0 1.8rem;
+	line-height: 1.7;
+}
+.about-btn {
+	padding: 3%;
+	text-align: center;
+	font-size: 18px;
+}
+
+/* Larger Devices Styles */
+@media(min-width: 800px) { /* Media Query 1 of 3 REQUIRED 5/2/2023 */
+	.notes-img img, .calendar-img img {
+		padding: 5% 45%;
+	}
+}
+
+
+/* Smaller Devices Styles */
+@media(max-width: 560px){ /* Media Query 2 of 3 REQUIRED 5/2/2023 */
+	.welcome h1 {
+		font-size: 36px;
+	}
+	.welcome p {
+		font-size: 16px;
+	}
+	.notes, .goals, .cal {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		padding: 15%;
+		align-items: center;
+	} 
+	.notes-text, .goals-text, .calendar-text {
+		display: block;
+		text-align: center;
+	}
+	.notes-img img, .goals-img img, .calendar-img img {
+		display: flex;
+		min-width: 150px;
+		padding: 20%;
+		align-items: center;
+	}
+	.goals-img img, .calendar-img img {
+		padding: 10%;
+	}
+	.about {
+		font-size: 16px;
+	}
+}
+
+
+/* Calendar Page */
+#calendar_table {
+	background-color: white;  
+	font-size: 0.9em; 
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	width: 100%;
+	box-shadow: rgb(51, 51, 51) 0px 0px 5px; 
+	border-radius: 10px;         
+ }
+ 
+ #calendar_table caption {
+	caption-side: top; 
+	text-align: center;
+	padding-bottom: 20px; 
+	font-size: 2em; 
+	letter-spacing: 0.2em;
+ }
+ 
+ .calendar_weekdays {
+	background-color: rgb(250, 229, 210);
+	width: 14.28%; 
+	font-size: 1em; 
+	border-bottom: 3px solid rgb(199, 131, 97);
+	border-radius: 15px;
+ }
+ 
+ .calendar_dates {
+	text-align: left; 
+	vertical-align: top;
+	font-size: 0.8em;
+	padding: 3px;
+	border-radius: 10px;
+	border: 1px dotted gray;
+	background-color: white;
+	height: 60px;
+ }
+ 
+ #calendar_today {
+	font-weight: bold; 
+	color: rgb(51, 51, 51);
+	background-color: rgb(147, 204, 250);
+	border: 1px solid black; /* Border REQUIRED 5/2/2023 */
+ }
+ div#calendar {
+	width: 80%;
+	margin: 30px auto 10px;
+ }
+ 
+ /* Contact Us Page */
+.contact-col{
+	width: 80%;
+	margin: auto;
+	padding-top: 15px;
+	flex-basis: 100%;
+	margin-bottom: 30px;
+}
+.contact-col fieldset {
+	padding: 15px;
+	border-width: 1px;
+	border-color: rgb(199, 131, 97);
+}
+.contact-col legend {
+	text-align: center;
+	font-size: 30px;
+	padding: 10px;
+}
+.contact-col label {
+	position: relative;
+	padding: 5px 10px;
+	font-size: 16px;
+}
+.contact-col div{
+	display: flex;
+	align-items: center;
+	margin-bottom: 40px;
+}
+.contact-col input, .contact-col textarea{
+	width: 100%;
+	padding: 15px;
+	margin-bottom: 17px;
+	outline: none;
+	border: 1px solid rgb(199, 131, 97);
+	background-color: rgb(250, 229, 210, 0.3);
+	box-sizing: border-box;
+}
+.contact-col .center-btn {
+	justify-content: center;
+	margin: auto;
+}
+.contact-col .center-btn button{
+	display: inline-block;
+	margin: 5px;
+	width: 100%;
+	font-size: 14px;
+}
+.address {
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+/* Login Page */
+.login {
+	margin: 15px auto;
+	position: relative;
+	width: 400px;
+	height: 500px;
+	background: rgb(250, 229, 210);
+	border-radius: 20px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden; 
+	transition: transform .5s ease, height .2s ease;
+}
+.login .form-setup {
+	width: 100%;
+	padding: 40px;
+	display: block;
+}
+.login .form-setup.login {
+	margin: auto;
+}
+.form-setup h2 {
+	font-size: 2em;
+	padding-top: 15px;
+	color: rgb(97, 99, 199);
+	text-align: center;
+}
+.input-box {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	border-bottom: 2px solid rgb(199, 131, 97);
+	margin: 30px 0;
+}
+.input-box label {
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	transform: translateY(-50%);
+	font-size: 1em;
+	color: rgb(199, 131, 97, 0.8);
+	font-weight: 500;
+	pointer-events: none;
+	transition: .5s;
+}
+.input-box input:focus~label, .input-box input:valid~label {
+	top: -5px;
+}
+.input-box input {
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	color: black;
+	font-weight: 600;
+	padding: 0 35px 0 5px;
+}
+.input-box .icon {
+	position: absolute;
+	right: 8px;
+	font-size: 1.2em;
+	color: rgb(199, 131, 97);
+	line-height: 57px;
+}
+.btn.login-form {
+	width: 100%;
+	height: 45px;
+	background: rgb(97, 99, 199, 0.9);
+	border: none;
+	outline: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 1em;
+	color: black;
+	font-weight: 500;
+}
+.login-register {
+	font-size: .9em;
+	color: rgb(199, 131, 97);
+	text-align: center;
+	font-weight: 500;
+	margin: 25px 0 10px;
+}
+.login-register p a {
+	color: rgb(97, 99, 199);
+	text-decoration: none;
+	font-weight: 600;
+}
+.login-register p a:hover {
+	text-decoration: underline;
+}
+
+/* About Us Page */
+.about-us {
+	width: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	margin: 20px auto;
+}
+.about-us h5 {
+	font-size: 50px;
+	color: black;
+	margin-bottom: 25px;
+	position: relative;
+}
+.about-us h5::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 4px;
+	display: block;
+	margin: 0 auto;
+	background-color: rgb(199, 131, 97);
+}
+.about-us p {
+	font-size: 18px;
+	color: grey;
+	margin-bottom: 35px;
+}
+.container {
+	width: 90%;
+	margin: 0 auto;
+	padding: 10px 20px;
+}
+.about {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.about-image {
+	flex: 1;
+	margin-right: 40px;
+	overflow: hidden;
+	align-items: center;
+}
+.about-image img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+.about-content {
+	flex: 1;
+}
+.about-content h6 {
+	font-size: 23px;
+	margin-bottom: 15px;
+	color: rgb(199, 131, 97);
+}
+.about-content p {
+	font-size: 18px;
+	line-height: 1.5;
+	color: grey;
+}
+.about-content .btn {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 19px;
+	margin-top: 15px;
+}
+
+@media screen and (max-width: 800px){ /* Media query 3 of 3 REQUIRED 5/2/2023 */
+	.about-us {
+		padding: 0px 20px;
+	}
+	.about-us h5 {
+		font-size: 36px;
+	}
+	.about-us p {
+		font-size: 17px;
+		margin-bottom: 0px;
+	}
+	.container {
+		padding: 0px;
+	}
+	.about {
+		padding: 20px;
+		flex-direction: column;
+	}
+	.about-image {
+		margin-right: 0px;
+		margin-bottom: 20px;
+	}
+	.about-content p {
+		padding: 0px;
+		font-size: 16px;
+	}
+	.about-content .btn {
+		font-size: 16px;
+	}
+}
+
+/* Notes Page */
+#root{
+    display: flex;
+    flex-wrap: wrap;
+}
+.note-container, .calendar-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0 0 0;
+	margin: 10px;
+}
+.note-container form, .calendar-container form{
+    width: 500px;
+    background-color: rgb(250, 229, 210, 0.5);
+    padding: 1rem 2rem;
+    box-shadow: 0px 0px 10px #000 ;
+    border-radius: 10px;
+}
+.form-box{
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 0;
+}
+input{
+    padding: 10px 0 ;
+    width: 100%;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border: 0;
+    border-bottom: 2px solid rgb(97, 99, 199);
+    background-color: transparent;
+    outline: none;
+}
+input:placeholder-shown{
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+.form-box label{
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-bottom: 7px;
+}
+.submit{
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid rgb(97, 99, 199);
+    box-shadow: 0 0 5px #000;
+    background-color: rgb(97, 99, 199);
+    font-size: 20px;
+    cursor: pointer;
+    display: block;
+	width: 80%;
+    margin: auto;
+}
+.submit:hover{
+    background-color: rgb(147, 204, 250);
+    box-shadow: 0 0 10px rgb(147, 204, 250);
+    transition: all 0.1s;
+    border: 2px solid rgb(147, 204, 250);
+}
+.note-box, .calendar-box{
+    width: 100%;
+    display: flex;
+    padding: 3rem 2rem 2rem 2rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.noteBox, .calendarBox{
+    background: rgb(250, 229, 210, 0.5);
+    padding: 1rem 1.5rem 1rem;
+    width: 32rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    margin: 1rem 2rem;
+}
+.noteBox h3, .calendarBox h3{
+    font-size: 1.9rem;
+    padding-bottom: 7px;
+    position: relative;
+    display: inline;
+}
+.noteBox p, .calendarBox p {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    padding: 1rem 0;
+}
+.noteBox h3::after, .calendarBox h3::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    bottom: 6px;
+    left: 0;
+    background: rgb(147, 204, 250);
+}
+.deletes{
+    padding: 8px 15px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background: rgb(97, 99, 199);
+    color: white;
+}
+.deletes:hover{
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    transition: all 0.2s;
+}
+
+/* Goals Page */
+.goals-container {
+	width: 100%;
+	min-height: 100px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.goal-list {
+	width: 100%;
+	max-width: 540px;
+	min-height: 400px;
+	background: rgb(250, 229, 210, 0.3);
+	margin: 25px auto;
+	padding: 40px 30px 70px;
+	border-radius: 10px;
+}
+.goal-list h3 {
+	color: black;
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	padding: 0 15px;
+}
+.goal-list h3 img {
+	width: 30px;
+	margin-left: 10px;
+}
+.goal-list .row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: rgb(147, 204, 250, 0.25);
+	border-radius: 30px;
+	padding-left: 20px;
+	margin-bottom: 25px;
+}
+.goal-list input {
+	flex: 1;
+	border: none;
+	outline: none;
+	background: transparent;
+	padding: 10px;
+	font-weight: 200;
+	color: black;
+}
+.goal-list button {
+	border: none;
+	outline: none;
+	padding: 16px 50px;
+	background: rgb(97, 99, 199);
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 40px;
+}
+.goal-list button:hover {
+	box-shadow: 0 0 3px rgb(51, 51, 51);
+}
+.goal-list ul li {
+	list-style: none;
+	font-size: 17px;
+	padding: 12px 8px 12px 50px;
+	user-select: none;
+	cursor: pointer;
+}
+.goal-list ul li::before {
+	content: "";
+	position: absolute;
+	height: 28px;
+	width: 28px;
+	border-radius: 50%;  /* Image Rounded Corners REQUIRED 5/7/2023 */
+	background-image: url(../images/unchecked.png); /* Image 4 of 5 REQUIRED 5/5/2023 */
+	background-size: cover;
+	background-position: center;
+	margin-top: 0px;
+	margin-left: -40px;
+}
+.goal-list ul li.checked {
+	color: #555;
+	text-decoration: line-through;
+}
+.goal-list ul li.checked::before {
+	background-image: url(../images/checked.png); /* Image 5 of 5 REQUIRED 5/5/2023 */
+}
+.goal-list ul li span {
+	position: absolute;
+	margin-top: 5px;
+	margin-left: 425px;
+	width: 40px;
+	height: 40px;
+	font-size: 22px;
+	color: rgb(45, 38, 38);
+	line-height: 42px;
+	text-align: center;
+}
+.goal-list ul li span:hover {
+	background: rgb(97, 99, 199);
+	color: rgb(250, 229, 210);
+	border-radius: 50%; 
+}
+blockquote {
+	text-align: center;
+	padding: 0 0 20px;
+}
+.video {
+	width: 300px;
+	height: auto;
+	text-align: center;
+	margin: 25px auto;
+}
+.video p {
+	margin-bottom: 20px;
+}
+.video img {
+	width: 300px;
+	height: auto;
+}
+video {
+	width: 300px;
+	height: auto;
+	margin: auto;
+	justify-content: center;
+}
+
+/* Footer Styles */
+footer {
+	background-color: rgb(28, 30, 148, 0.9);
+	color: white;	
+	font-size: 0.75em;
+	padding: 10px;
+	display: block;
+	text-align: center;
+}
+
+body > footer > nav.vertical {
+	float: left;
+	width: 25%;	
+	display: block;
+}
+
+body > footer > nav.vertical > ul {
+	line-height: 2em;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+footer nav.vertical a {
+	text-decoration: none;
+}
+
+footer nav.vertical p {
+	font-size: 1.25em;
+	text-align: center;
+	color: rgb(250, 229, 210);
+}
+
+footer a:visited, footer a:link {
+	color: white;
+}
+
+footer a:hover, footer a:active {
+	color: rgb(199, 131, 97);
+}
+
+footer::after { /* Pseudo-element REQUIRED 4/28/2023 */
+	clear: both;	
+    content: "";
+    display: table;
+}
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Avery Jones' Final Project (Personal Organization Site)"> <!--Description REQUIRED 4/25/2023-->
+    <meta name="keywords" content="Journal, Schedule, Notes, Goals"> <!--Keywords REQUIRED 4/25/2023-->
+    <meta name="author" content="Avery Jones"> <!--Author Required 4/25/2023-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Viewport REQUIRED 4/25/2023-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link  href="CSS/style.css" rel="stylesheet">
+    <title>Avery's Website</title><!--Title REQUIRED 4/25/2023-->
+</head>
+<body>
+    <header> 
+		<nav class="top-nav"> <!-- Navigation Bar -->
+			<a href="index.html"><img src="images/logo.png" alt="logo"></a> <!-- Image 4 of 5 REQUIRED 4/29/2023 -->
+            <div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="notes.html">NOTES</a></li>
+                    <li><a href="tracker.html">GOALS</a></li>
+                    <li><a href="calendar.html">CALENDAR</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				</ul>
+			</div>
+            <div class="nav-member">
+                <ul>
+                    <li><a href="login.html">LOGIN</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+	</header>
+
+
+    <!-- Welcome Section -->
+    <section class="welcome" id="welcome">
+        <div class="welcome">
+            <h1>Welcome to the Online Planner</h1>
+            <p>Jot down notes, schedule events, and track your goals all in one place.</p>
+        </div>
+    </section>
+
+    <!-- Notes Section -->
+    <section class="notes" id="notes">
+        <div class="notes-img">
+            <img src="images/notes.png" alt="image of a notepad with a pencil about to write on it, in black and white"><!-- Image 1 of 5 REQUIRED 4/28/2023 -->
+        </div>
+        <div class="notes-text">
+            <h1>Notes</h1>
+            <p>Write down your notes, ideas, journal entries, etc. </p>
+            <a href="notes.html" class="btn">Start Here</a>
+        </div>        
+
+    </section>
+
+    <!-- Goals Section -->
+    <section class="goals" id="goals">
+        <div class="goals-text">
+            <h1>Goals</h1> <!-- text-level 1 of 5 REQUIRED 4/28/2023 -->
+            <p>Keep all your goals in one place while tracking your progress.</p>
+            <a href="tracker.html" class="btn">Start Here</a>
+        </div>        
+        <div class="goals-img">
+            <img src="images/goals.png" alt="image of a target with an arrow in the bullseye, in black and white"><!-- Image 2 of 5 REQUIRED 4/28/2023 -->
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="cal" id="cal">
+        <div class="calendar-img">
+            <img src="images/calendar.png" alt="image of a calendar, in black and white"> <!-- Image 3 of 5 REQUIRED 4/28/2023 -->
+        </div>
+        <div class="calendar-text">
+            <h1>Calendar</h1>
+            <p>Create a schedule that works for you.</p>
+            <a href="calendar.html" class="btn">Start Here</a>
+        </div> 
+    </section>
+
+    <!-- About Us Section -->
+    <div class="about-btn">
+        <a href="about.html" class="btn">ABOUT US</a>
+    </div>
+
+    <footer>
+        <nav class="vertical">
+            <p>Resources</p>
+           <ul>
+            <li><a href="about.html">About Us</a></li>         
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Help</a></li>            
+           </ul>         
+        </nav>
+        <nav class="vertical">
+            <p>Pages</p>
+            <ul>
+               <li><a href="collections.html">Collections</a></li>
+               <li><a href="calendar.html">Calendar</a></li>
+               <li><a href="notes.html">Notes</a></li>         
+               <li><a href="tracker.html">Goals</a></li>                        
+            </ul>         
+         </nav>
+         <nav class="vertical">
+            <p>Login</p>
+            <ul>
+               <li><a href="login.html">Login</a></li>
+               <li><a href="register.html">Sign Up</a></li>                     
+            </ul>         
+         </nav>
+     </footer>
+
+     <script src="JS/sheet.js"></script>
+</body>
+</html>
